@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Scroll : MonoBehaviour
 {
-
+    //Ignore this for now, its behaviour is horrible and I haven't got a chance to fix it properly
     public GameObject car;
     public Rigidbody2D carb;
 
