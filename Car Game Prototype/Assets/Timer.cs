@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         startTime = System.Math.Floor(Time.time);
+
     }
 
     // Update is called once per frame - Updates the Timer from the instance of the scene starting, dispays the result in the text

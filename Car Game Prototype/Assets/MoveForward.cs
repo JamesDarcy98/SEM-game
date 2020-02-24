@@ -23,8 +23,6 @@ public class MoveForward : MonoBehaviour
     void Update()
     {
 
-
-
         //D,A inputs to move the car forwards/backwards - Fairly self explanatory
         if (Input.GetKey(KeyCode.D))
         {
