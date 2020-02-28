@@ -11,6 +11,7 @@ public class MoveForward : MonoBehaviour
     public float maxY = 2.0f;
     public int CameFrom;
     public float startTime;
+    public float changelanespeed;
     
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,6 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
 
         //D,A inputs to move the car forwards/backwards - Fairly self explanatory
         if (Input.GetKey(KeyCode.D))
@@ -50,7 +49,8 @@ public class MoveForward : MonoBehaviour
         {
             if (rb.position[1] == 0 || rb.position[1] == -2)
             {
-                rb.velocity = new Vector3(rb.velocity[0], 20f, 0f);
+                transform.rotation = Quaternion.Euler(0, 0, 290);
+                rb.velocity = new Vector3(rb.velocity[0], changelanespeed, 0f);
             }
             startTime = Time.time;
         }
@@ -59,7 +59,8 @@ public class MoveForward : MonoBehaviour
         {
             if (rb.position[1] == 0 || rb.position[1] == 2)
             {
-                rb.velocity = new Vector3(rb.velocity[0], -20f, 0f);
+                transform.rotation = Quaternion.Euler(0, 0, 250);
+                rb.velocity = new Vector3(rb.velocity[0], -changelanespeed, 0f);
             }
             startTime = Time.time;
         }
@@ -70,12 +71,14 @@ public class MoveForward : MonoBehaviour
         if (System.Math.Abs(rb.position[0]) > 11)
         {
             transform.position = new Vector3(11*System.Math.Sign(rb.position[0]), rb.position[1], 0.0f);
+            transform.rotation = Quaternion.Euler(0, 0, 270);
             rb.velocity = new Vector3(0f, rb.velocity[1], 0.0f);
         }
 
         if (System.Math.Abs(rb.position[1]) > 2)
         {
             transform.position = new Vector3(rb.position[0], 2 * System.Math.Sign(rb.position[1]), 0.0f);
+            transform.rotation = Quaternion.Euler(0, 0, 270);
             rb.velocity = new Vector3(rb.velocity[0], 0f, 0.0f);
             CameFrom = System.Math.Sign(rb.position[1]);
         }
@@ -87,9 +90,10 @@ public class MoveForward : MonoBehaviour
         //This conditional "Catches" the car as it is passing from one of the outside tracks to the middle and stops it in the middle track
         //The conditional afterwards is an extra bit of code that overrides this if the key is held down for more than 0.3s - You can move two tracks without having to press
         //the relevant key twice;
-        if (System.Math.Abs(rb.position[1]) < 0.05 && CameFrom != 0)
+        if (System.Math.Abs(rb.position[1]) < 0.1 && CameFrom != 0)
         {
             transform.position = new Vector3(rb.position[0], 0f, 0.0f);
+            transform.rotation = Quaternion.Euler(0, 0, 270);
             rb.velocity = new Vector3(rb.velocity[0], 0f, 0.0f);
             CameFrom = 0;
         } 
@@ -98,11 +102,11 @@ public class MoveForward : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.S) && ((Time.time - startTime) > 0.3))
             {
-                rb.velocity = new Vector3(rb.velocity[0], -20f, 0f);
+                rb.velocity = new Vector3(rb.velocity[0], -changelanespeed, 0f);
             }
 
             if(Input.GetKey(KeyCode.W) && ((Time.time - startTime) > 0.3)){
-                rb.velocity = new Vector3(rb.velocity[0], 20f, 0f);
+                rb.velocity = new Vector3(rb.velocity[0], changelanespeed, 0f);
             }
         }
       

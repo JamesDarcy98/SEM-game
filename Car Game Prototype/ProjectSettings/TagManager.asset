@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Rocks
+    uniqueID: 2581846451
+    locked: 0
+  - name: Game Over
+    uniqueID: 3894735463
+    locked: 0
