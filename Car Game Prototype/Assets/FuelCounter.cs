@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class FuelCounter : MonoBehaviour
 {
     public double FuelAmount;
+    public double FuelAdded;
     public GameOverState gameover;
     public Text FuelText;
     public double startTime;
@@ -21,7 +22,7 @@ public class FuelCounter : MonoBehaviour
         car = GameObject.Find("car");
         fuelcounter = car.GetComponent<FuelCounter>();
         Debug.Log(FuelAmount);
-        fuelcounter.FuelAmount += 50;
+        fuelcounter.FuelAdded += 1;
         //Debug.Log(FuelAmount);
     }
 
@@ -30,7 +31,6 @@ public class FuelCounter : MonoBehaviour
     {
         car = GameObject.Find("car");
         fuelcounter = car.GetComponent<FuelCounter>();
-        fuelcounter.FuelAmount = 100;
         FuelText.text = "Fuel: " + fuelcounter.FuelAmount;
         startTime = Time.time;
         
@@ -40,8 +40,7 @@ public class FuelCounter : MonoBehaviour
     // Reduces Fuel by an amount every frame and calls game over state when it reaches 0
     void Update()
     {
-        //Debug.Log(FuelAmount);
-        FuelAmount -= 0.01;
+        FuelAmount = 100 + 3.5*(fuelcounter.startTime - Time.time) + 50 * fuelcounter.FuelAdded;
         if (FuelAmount <= 0)
         {
             gameover.GameOver();

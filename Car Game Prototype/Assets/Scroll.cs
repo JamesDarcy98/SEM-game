@@ -2,24 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scroll : MonoBehaviour
-{
-    //Ignore this for now, its behaviour is horrible and I haven't got a chance to fix it properly
-    public GameObject car;
-    public Rigidbody2D carb;
+public class Scroll : MonoBehaviour {
 
-    public float speed = 0f;
+    public float RoadSpeed;
+    //Ignore this for now, its behaviour is horrible and I haven't got a chance to fix it properly
     // Start is called before the first frame update
     void Start()
     {
-        carb = car.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 offset = new Vector2((Time.deltaTime * 2f), 0);
+        Vector2 offset = new Vector2((Time.deltaTime * RoadSpeed), 0);
         GetComponent<Renderer>().material.mainTextureOffset += offset;
     }
 }
-//10*carb.velocity[0]

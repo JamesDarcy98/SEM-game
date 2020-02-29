@@ -16,7 +16,7 @@ public class FuelSpawn : MonoBehaviour
     void Start()
     {
         canspawnbottom = true; canspawnmiddle = true; canspawntop = true;
-        spawnRate = Random.Range(5, 10);
+        spawnRate = Random.Range(10, 20);
         timespawnedago = 0;
     }
 
@@ -55,7 +55,7 @@ public class FuelSpawn : MonoBehaviour
                     break;
             }
             
-            spawnRate = Random.Range(5, 10);
+            spawnRate = Random.Range(10, 15);
             Instantiate(Fuel, x, Quaternion.Euler(0, 0, 0));
             nextSpawn = Time.time + spawnRate;
         }

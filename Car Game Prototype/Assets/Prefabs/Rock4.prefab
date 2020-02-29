@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5234570047898265225}
   - component: {fileID: 5234570047898265224}
   - component: {fileID: 4512439479276176559}
+  - component: {fileID: -7475521248230562545}
   m_Layer: 0
   m_Name: Rock4
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5234570047898265226}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.15, y: -2.82, z: 6.0119147}
-  m_LocalScale: {x: 2.088, y: 2.525, z: 1}
+  m_LocalPosition: {x: 5.832, y: -2.093, z: 6.0119147}
+  m_LocalScale: {x: 1.3730167, y: 1.660377, z: 0.657575}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -107,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.6}
+  m_Size: {x: 0.8, y: 0.025}
   m_EdgeRadius: 0
 --- !u!114 &4512439479276176559
 MonoBehaviour:
@@ -121,3 +122,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc7d48140b53ba4cb0d290572955a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 0}
+  scroll: {fileID: 0}
+--- !u!50 &-7475521248230562545
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5234570047898265226}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
