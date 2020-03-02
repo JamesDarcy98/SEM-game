@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CarChoice.cs" />
      <Compile Include="Assets\CarSpawn.cs" />
      <Compile Include="Assets\CollisionChecker.cs" />
      <Compile Include="Assets\EnemyCarMovement.cs" />
@@ -69,6 +70,7 @@
      <Compile Include="Assets\RockMovement.cs" />
      <Compile Include="Assets\RockSpawn.cs" />
      <Compile Include="Assets\Scroll.cs" />
+     <Compile Include="Assets\SetCar.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
