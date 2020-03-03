@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    void Awake(){
+         PlayerPrefs.SetInt("CarChoice", 1);
+    }
+
     public void PlayGame(){
         SceneManager.LoadScene("GameScene");
     }

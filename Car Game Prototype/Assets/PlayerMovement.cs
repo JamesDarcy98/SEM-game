@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (rb.position[1] == 0 || rb.position[1] == -2)
             {
-                transform.rotation = Quaternion.Euler(0, 0, 290);
+                transform.rotation = Quaternion.Euler(0, 0, 20);
                 rb.velocity = new Vector3(rb.velocity[0], changelanespeed, 0f);
             }
             startTime = Time.time;
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (rb.position[1] == 0 || rb.position[1] == 2)
             {
-                transform.rotation = Quaternion.Euler(0, 0, 250);
+                transform.rotation = Quaternion.Euler(0, 0, -20);
                 rb.velocity = new Vector3(rb.velocity[0], -changelanespeed, 0f);
             }
             startTime = Time.time;
@@ -72,14 +72,14 @@ public class PlayerMovement : MonoBehaviour
         if (System.Math.Abs(rb.position[0]) > 11)
         {
             transform.position = new Vector3(11*System.Math.Sign(rb.position[0]), rb.position[1], 0.0f);
-            transform.rotation = Quaternion.Euler(0, 0, 270);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             rb.velocity = new Vector3(0f, rb.velocity[1], 0.0f);
         }
 
         if (System.Math.Abs(rb.position[1]) > 2)
         {
             transform.position = new Vector3(rb.position[0], 2 * System.Math.Sign(rb.position[1]), 0.0f);
-            transform.rotation = Quaternion.Euler(0, 0, 270);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             rb.velocity = new Vector3(rb.velocity[0], 0f, 0.0f);
             CameFrom = System.Math.Sign(rb.position[1]);
         }
@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
         if (System.Math.Abs(rb.position[1]) < 0.1 && CameFrom != 0)
         {
             transform.position = new Vector3(rb.position[0], 0f, 0.0f);
-            transform.rotation = Quaternion.Euler(0, 0, 270);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             rb.velocity = new Vector3(rb.velocity[0], 0f, 0.0f);
             CameFrom = 0;
         } 
@@ -104,12 +104,12 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.S) && ((Time.time - startTime) > 0.3))
             {
                 rb.velocity = new Vector3(rb.velocity[0], -changelanespeed, 0f);
-                transform.rotation = Quaternion.Euler(0, 0, 250);
+                transform.rotation = Quaternion.Euler(0, 0, -20);
             }
 
             if(Input.GetKey(KeyCode.W) && ((Time.time - startTime) > 0.3)){
                 rb.velocity = new Vector3(rb.velocity[0], changelanespeed, 0f);
-                transform.rotation = Quaternion.Euler(0, 0, 290);
+                transform.rotation = Quaternion.Euler(0, 0, 20);
             }
         }
       
