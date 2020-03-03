@@ -13,6 +13,7 @@ public class GameOverState : MonoBehaviour
     private bool isgameover;
     public GameObject GameOverImage;
     public GameObject GameOverText;
+    protected AudioSource deathAudio;
 
 
     //function below is called on a game over state, and the image and text constituting the Game Over Screen Appear
@@ -21,6 +22,7 @@ public class GameOverState : MonoBehaviour
     {
         if (isgameover == false)
         {
+            deathAudio.Play();
             Timer timer = TimerText.GetComponent("Timer") as Timer;
             GameOverImage.SetActive(true);
             GameOverText.SetActive(true);
@@ -41,6 +43,7 @@ public class GameOverState : MonoBehaviour
         txt.enabled = false;
         GameOverImage.SetActive(false);
         GameOverText.SetActive(false);
+        deathAudio = GetComponent<AudioSource>(); 
     }
 
 
@@ -50,6 +53,7 @@ public class GameOverState : MonoBehaviour
     {
         if (isgameover && Input.GetKeyDown(KeyCode.Space))
         {
+   
             SceneManager.LoadScene("GameScene");
         }
     }

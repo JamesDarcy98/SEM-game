@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     private int CameFrom;
 
+    public AudioSource movementAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 transform.rotation = Quaternion.Euler(0, 0, 290);
                 rb.velocity = new Vector3(rb.velocity[0], changelanespeed, 0f);
+                movementAudio.Play();
             }
             startTime = Time.time;
         }
@@ -62,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 transform.rotation = Quaternion.Euler(0, 0, 250);
                 rb.velocity = new Vector3(rb.velocity[0], -changelanespeed, 0f);
+                movementAudio.Play();
             }
             startTime = Time.time;
         }

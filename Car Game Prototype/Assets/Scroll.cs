@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Scroll : MonoBehaviour {
 
-    public float RoadSpeed;
+    public float RoadSpeed = 4;
     //Ignore this for now, its behaviour is horrible and I haven't got a chance to fix it properly
     // Start is called before the first frame update
     void Start()
     {
+        //foreach (Transform child in transform)
+        //{
+        //    child.gameObject.AddComponent<Scroll>();
+       //}
     }
 
     // Update is called once per frame

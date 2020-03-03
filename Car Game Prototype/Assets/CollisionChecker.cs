@@ -13,6 +13,7 @@ public class CollisionChecker : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
              gameover.GameOver();
+        Destroy(gameObject,2f);
             
     }
 

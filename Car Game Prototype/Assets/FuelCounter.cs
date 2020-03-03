@@ -14,6 +14,7 @@ public class FuelCounter : MonoBehaviour
     public double startTime;
     private GameObject car;
     private FuelCounter fuelcounter;
+    public AudioSource fuelAudio;
     // Start is called before the first frame update
 
     //Method Activates on collision with a fuel pickup (see FuelCollider script)
@@ -23,6 +24,7 @@ public class FuelCounter : MonoBehaviour
         fuelcounter = car.GetComponent<FuelCounter>();
         Debug.Log(FuelAmount);
         fuelcounter.FuelAdded += 1;
+        
         //Debug.Log(FuelAmount);
     }
 
@@ -45,7 +47,9 @@ public class FuelCounter : MonoBehaviour
         {
             gameover.GameOver();
         }
-        else { FuelText.text = "Fuel: " + System.Math.Ceiling(FuelAmount); }
+        else { FuelText.text = "Fuel: " + System.Math.Ceiling(FuelAmount);
+        
+        }
 
         
     }

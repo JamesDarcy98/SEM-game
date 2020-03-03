@@ -87,6 +87,7 @@ public class EnemyCarMovement : MonoBehaviour
         if (transform.position[0] < -20)
         {
             Destroy(gameObject);
+
         }
     }
 }
