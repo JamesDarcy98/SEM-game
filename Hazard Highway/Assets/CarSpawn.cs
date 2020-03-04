@@ -32,7 +32,7 @@ public class CarSpawn : MonoBehaviour
                 case 1:
                     if (fuelspawn.canspawnmiddle)
                     {
-                        x = new Vector3(15f, 0f, 0f);
+                        x = new Vector3(30f, 0f, 0f);
                         canspawnmiddle = false;
                     }
                     else { x = new Vector3(-20f, 0f, 0f); }
@@ -40,7 +40,7 @@ public class CarSpawn : MonoBehaviour
                 case 2:
                     if (fuelspawn.canspawntop)
                     {
-                        x = new Vector3(15f, 2.1f, 0f);
+                        x = new Vector3(30f, 2f, 0f);
                         canspawntop = false;
                     }
                     else { x = new Vector3(-20f, 0f, 0f); }
@@ -49,7 +49,7 @@ public class CarSpawn : MonoBehaviour
                     if (fuelspawn.canspawnbottom)
                     {
                         //Debug.Log("car");
-                        x = new Vector3(15f, -2f, 0f);
+                        x = new Vector3(30f, -2f, 0f);
                         canspawnbottom = false;
                     }
                     else { x = new Vector3(-20f, 0f, 0f); }

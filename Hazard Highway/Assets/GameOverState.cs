@@ -42,6 +42,7 @@ public class GameOverState : MonoBehaviour
     //Hides the Game over Text/Image until game over state is achieved (above)
     void Start()
     {
+        Screen.brightness = -10f;
         ispaused = false;
         img.enabled = false;
         txt.enabled = false;
@@ -58,7 +59,12 @@ public class GameOverState : MonoBehaviour
         if (isgameover && Input.GetKeyDown(KeyCode.Space))
         {
             Time.timeScale = 1;
-            SceneManager.LoadScene("GameScene");
+            if (PlayerPrefs.GetInt("NightMode") == 0)
+            {
+                SceneManager.LoadScene("GameScene");
+            }
+            else { SceneManager.LoadScene("GameSceneNight"); }
+            
         }
         if (isgameover && Input.GetKeyDown(KeyCode.Escape))
         {

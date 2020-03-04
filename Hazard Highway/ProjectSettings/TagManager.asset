@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - BACKG
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Game Over
     uniqueID: 3894735463
+    locked: 0
+  - name: Background
+    uniqueID: 1914183827
     locked: 0

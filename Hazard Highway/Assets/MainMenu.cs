@@ -10,7 +10,14 @@ public class MainMenu : MonoBehaviour
     }
 
     public void PlayGame(){
-        SceneManager.LoadScene("GameScene");
+        if (PlayerPrefs.GetInt("NightMode") == 0)
+        {
+            SceneManager.LoadScene("GameScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("GameSceneNight");
+        }
     }
 
     public void QuitGame(){

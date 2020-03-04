@@ -21,9 +21,7 @@ public class FuelCounter : MonoBehaviour
     {
         car = GameObject.Find("car");
         fuelcounter = car.GetComponent<FuelCounter>();
-        //Debug.Log(FuelAmount);
         fuelcounter.FuelAdded += 1;
-        //Debug.Log(FuelAmount);
     }
 
     //Initially sets Fuel to 100 and displays it on the text

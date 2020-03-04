@@ -27,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(transform.position[1]);
         if (gameoverstate.ispaused == false)
         {
             //D,A inputs to move the car forwards/backwards - Fairly self explanatory
