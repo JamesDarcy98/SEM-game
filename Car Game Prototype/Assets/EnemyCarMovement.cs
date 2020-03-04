@@ -64,12 +64,12 @@ public class EnemyCarMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(changelanespeed);
+        //Debug.Log(changelanespeed);
         transform.position = new Vector3(transform.position[0] - Time.deltaTime*carspeed, transform.position[1] + Time.deltaTime*changelanespeed, transform.position[2]);
 
         if (System.Math.Abs(transform.position[1]) > 2)
         {
-            Debug.Log("Here");
+            //Debug.Log("Here");
             transform.position = new Vector3(transform.position[0], 2 * System.Math.Sign(transform.position[1]), transform.position[2]);
             changelanespeed = 0;
             transform.rotation = Quaternion.Euler(0, 0, 90);

@@ -47,7 +47,7 @@ public class FuelSpawn : MonoBehaviour
                     break;
                 case 3:
                     if (rockspawn.canspawnbottom) {
-                        Debug.Log("Fuel");
+                       // Debug.Log("Fuel");
                         x = new Vector3(15f, -2f, 0f);
                         canspawnbottom = false;
                     }

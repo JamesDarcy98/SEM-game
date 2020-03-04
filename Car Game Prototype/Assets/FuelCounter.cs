@@ -21,7 +21,7 @@ public class FuelCounter : MonoBehaviour
     {
         car = GameObject.Find("car");
         fuelcounter = car.GetComponent<FuelCounter>();
-        Debug.Log(FuelAmount);
+        //Debug.Log(FuelAmount);
         fuelcounter.FuelAdded += 1;
         //Debug.Log(FuelAmount);
     }
@@ -40,7 +40,7 @@ public class FuelCounter : MonoBehaviour
     // Reduces Fuel by an amount every frame and calls game over state when it reaches 0
     void Update()
     {
-        FuelAmount = 100 + 3.5*(fuelcounter.startTime - Time.time) + 50 * fuelcounter.FuelAdded;
+        FuelAmount = 100 + 5*(fuelcounter.startTime - Time.time) + 50 * fuelcounter.FuelAdded;
         if (FuelAmount <= 0)
         {
             gameover.GameOver();

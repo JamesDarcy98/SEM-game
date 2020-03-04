@@ -48,7 +48,7 @@ public class CarSpawn : MonoBehaviour
                 case 3:
                     if (fuelspawn.canspawnbottom)
                     {
-                        Debug.Log("car");
+                        //Debug.Log("car");
                         x = new Vector3(15f, -2f, 0f);
                         canspawnbottom = false;
                     }
